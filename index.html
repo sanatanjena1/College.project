@@ -12,10 +12,80 @@
   <link rel="stylesheet" href="stytext.css">
   <link rel="stylesheet" href="indfoot.css">
   <link rel="icon" href="sanatan.jpg">
-
+  <style>
+    #preloader {
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             z-index: 1000;
+         }
+         .doodle {
+             font-size: 50px;
+             animation: jumpDoodle 1s ease-in-out infinite;
+         }
+         .loading-text {
+             font-size: 24px;
+             font-weight: bold;
+             color: #3498db; /* Text color */
+             animation: colorChange 2s infinite alternate;
+         }
+         @keyframes jumpDoodle {
+             0%, 100% {
+                 transform: translateY(0);
+             }
+             50% {
+                 transform: translateY(-20px);
+             }
+         }
+         @keyframes colorChange {
+             0% {
+                 color: #3498db;
+             }
+             25% {
+                 color: #e74c3c;
+             }
+             50% {
+                 color: #2ecc71;
+             }
+             75% {
+                 color: #f39c12;
+             }
+             100% {
+                 color: #3498db;
+             }
+         }
+ 
+         .content{
+           display: none;
+         }
   </style>
+  
 </head>
 <body>
+
+  <div id="preloader">
+    <div class="doodle">🚀</div>
+    <div class="loading-text">Loading...</div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Simulate loading delay (remove this in a real-world scenario)
+        setTimeout(function() {
+            document.getElementById("preloader").style.display = "none";
+            document.querySelector(".content").style.display = "block";
+        }, 2000); // Adjust the delay as needed
+    });
+</script>
+
+
+  <div class="content">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-drk fixed-top">
     <div class="container">
@@ -102,6 +172,8 @@
     <p>⭐★⭐ Copyright © 2023 ⭐★⭐ sj</p>
   </div>
 </footer>
+
+</div>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
